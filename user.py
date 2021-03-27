@@ -12,19 +12,20 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
-val = ("John", "Highway 21")
-mycursor.execute(sql, val)
 
-mydb.commit()
-
-print(mycursor.rowcount, "record inserted.")
 
 class User:
     def __init__(self, _id, username, password):
         self.id = _id
         self.username = username
         self.password = password
+
+    def create_user(username, password):
+        sql = "INSERT INTO Users (name, address) VALUES (%s, %s)"
+        val = ("John", "Highway 21")
+        mycursor.execute(sql, val)
+        mydb.commit()
+        print(mycursor.rowcount, "record inserted.")
 
     @classmethod
     def find_by_username (cls, username):

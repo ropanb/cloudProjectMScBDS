@@ -1,3 +1,4 @@
+#Redundant - move the code to User.py.
 from user import User
 
 def authenticate(username, password):
